@@ -8,7 +8,9 @@ def test_get_mask_card_number(card_number):
 
     with pytest.raises(AssertionError):
         assert get_mask_card_number("70007922896063611111")
+    with pytest.raises(AssertionError):
         assert get_mask_card_number("12345")
+    with pytest.raises(AssertionError):
         assert get_mask_card_number(" ")
 
 
@@ -17,5 +19,7 @@ def test_get_mask_account(mask_account):
 
     with pytest.raises(AssertionError):
         assert get_mask_account("736541084301358743055555")
+    with pytest.raises(AssertionError):
         assert get_mask_account("12345")
+    with pytest.raises(AssertionError):
         assert get_mask_account(" ")

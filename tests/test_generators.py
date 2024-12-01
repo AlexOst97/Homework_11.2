@@ -111,4 +111,5 @@ def test_card_number_generator(
 
     with pytest.raises(TypeError):
         assert next(card_number_generator(5, "some_sring"))
+    with pytest.raises(TypeError):
         assert next(card_number_generator())

@@ -21,7 +21,8 @@ def mask_account_card(bank_account: str) -> str:
     elif "Visa Gold" in bank_account:
         bank_account_card = get_mask_card_number(bank_account[10:])
         return f"Visa Gold {bank_account_card}"
-    return ''
+    return ""
+
 
 # print(mask_account_card('Счет 64686473678894779589'))
 # print(mask_account_card('Счет 35383033474447895560'))
@@ -43,6 +44,7 @@ def get_date(date_today: str) -> str:
             return f"0{day}.0{month}.{year}"
         elif 10 <= day <= 31 and 10 <= month <= 12 and 2000 <= year <= 2500:
             return f"{day}.{month}.{year}"
-    return ''
+    return ""
+
 
 # print(get_date('2024-03-11T02:26:18.671407'))

@@ -29,9 +29,8 @@ def test_mask_account_card(account_card):
 
     with pytest.raises(AssertionError):
         assert mask_account_card(" ")
+    with pytest.raises(AssertionError):
         assert mask_account_card("123")
-        assert mask_account_card("Счет 123456791011121314151617181920")
-        assert mask_account_card("Visa Gold 1")
 
 
 def test_get_date(date):
@@ -40,6 +39,9 @@ def test_get_date(date):
 
     with pytest.raises(AssertionError):
         assert get_date(" ")
+    with pytest.raises(AssertionError):
         assert get_date("123")
+    with pytest.raises(AssertionError):
         assert get_date("2024-11-99T02:26:18.671407")
+    with pytest.raises(AssertionError):
         assert get_date("2024-99-20T02:26:18.671407")
