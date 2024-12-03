@@ -14,7 +14,7 @@ def log(filename=None):
                 if filename is None:
                     print(f"{result}")
                 elif filename is not None:
-                    with open("record_result.txt", "a", encoding="utf-8") as file:
+                    with open(filename, "a", encoding="utf-8") as file:
                         file.write(f"{result}\n")
                 return result
 
@@ -23,7 +23,7 @@ def log(filename=None):
                 if filename is None:
                     print(f"{result_e}")
                 elif filename is not None:
-                    with open("record_result.txt", "a", encoding="utf-8") as file:
+                    with open(filename, "a", encoding="utf-8") as file:
                         file.write(f"{result_e}\n")
                 return result_e
 
@@ -37,4 +37,4 @@ def my_function(x, y):
     return x / y
 
 
-my_function(1, 0)
+my_function(4, 2)
