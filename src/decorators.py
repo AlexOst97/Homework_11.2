@@ -9,30 +9,31 @@ def log(filename=None):
         @wraps(function)
         def wrapper(*args, **kwargs):
             try:
-                function(*args, **kwargs)
-                result = f"{function.__name__} ok"
+                result = function(*args, **kwargs)
+                result_try = f"{function.__name__} ok"
                 if filename is None:
-                    print(f"{result}")
+                    print(f"{result_try}")
                 elif filename is not None:
                     with open(filename, "a", encoding="utf-8") as file:
-                        file.write(f"{result}\n")
+                        file.write(f"{result_try}\n")
                 return result
 
             except Exception as e:
-                result_e = f"{function.__name__} error: {e}. Inputs: {args}, {kwargs}"
+                result_error = (
+                    f"{function.__name__} error: {e}. Inputs: {args}, {kwargs}"
+                )
                 if filename is None:
-                    print(f"{result_e}")
+                    print(f"{result_error}")
                 elif filename is not None:
                     with open(filename, "a", encoding="utf-8") as file:
-                        file.write(f"{result_e}\n")
-                return result_e
+                        file.write(f"{result_error}\n")
 
         return wrapper
 
     return decoretor
 
 
-@log(filename="mylog.txt")
+@log()
 def my_function(x, y):
     return x / y
 
